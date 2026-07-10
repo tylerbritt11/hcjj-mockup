@@ -166,14 +166,16 @@
   .l-kids{background:#DFEAE0;color:var(--palm)}
   .l-open{background:#EBE4F2;color:#54406E}
   .sched-note{color:var(--ink-soft);font-size:13.5px;margin-top:14px}
-  /* mobile: stack schedule rows instead of horizontal scroll */
+  /* mobile schedule: day cards (desktop table hidden, cards shown) */
+  .sched-cards{display:none}
   @media(max-width:640px){
-    .sched-wrap table{min-width:0;width:100%}
-    .sched-wrap thead{display:none}
-    .sched-wrap tbody tr{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;padding:11px 14px;border-bottom:1px solid var(--rule)}
-    .sched-wrap tbody tr:last-child{border-bottom:none}
-    .sched-wrap tbody th,.sched-wrap td{display:inline;padding:0;border:none;background:none}
-    .sched-wrap tbody th{flex:0 0 44px;font-size:15px}
+    .sched-wrap{display:none}
+    .sched-cards{display:grid;gap:12px;margin-top:22px}
+    .sday{background:var(--paper);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+    .sday-h{background:var(--haint);padding:9px 14px;font-family:var(--serif);font-weight:600;font-size:16px;color:var(--ink);border-bottom:1px solid var(--rule)}
+    .sitem{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 14px;border-bottom:1px solid var(--rule)}
+    .sitem:last-child{border-bottom:none}
+    .sitem .st{font-variant-numeric:tabular-nums;color:var(--ink-soft);font-size:13.5px;white-space:nowrap}
   }
 
   /* pricing — engraved card style */
@@ -237,7 +239,6 @@
         <a class="btn btn-navy" href="#free-class">Try a Free Class</a>
         <a class="btn btn-line" href="#schedule">View the Schedule</a>
       </div>
-      <p class="hero-proof"><b>Kids &amp; adults</b> · small classes · loaner gis for beginners</p>
     </div>
     <aside class="week-card" aria-label="This week's classes">
       <div class="wk-head"><b>This week on the mat</b><a href="#schedule">Full schedule →</a></div>
@@ -399,6 +400,35 @@
           <tr><th scope="row">Sunday</th><td colspan="2"><span class="lbl l-gi">Gi</span> 12:00 PM</td></tr>
         </tbody>
       </table>
+    </div>
+    <div class="sched-cards">
+      <div class="sday"><div class="sday-h">Monday</div>
+        <div class="sitem"><span class="lbl l-gi">Gi</span><span class="st">6:00 PM</span></div>
+      </div>
+      <div class="sday"><div class="sday-h">Tuesday</div>
+        <div class="sitem"><span class="lbl l-nogi">No-Gi</span><span class="st">8:30 AM</span></div>
+        <div class="sitem"><span class="lbl l-kids">Kids 8–14</span><span class="st">5:00 PM</span></div>
+        <div class="sitem"><span class="lbl l-nogi">No-Gi</span><span class="st">6:00 PM</span></div>
+      </div>
+      <div class="sday"><div class="sday-h">Wednesday</div>
+        <div class="sitem"><span class="lbl l-gi">Gi Fundamentals</span><span class="st">6:00 AM</span></div>
+        <div class="sitem"><span class="lbl l-gi">Gi</span><span class="st">6:00 PM</span></div>
+      </div>
+      <div class="sday"><div class="sday-h">Thursday</div>
+        <div class="sitem"><span class="lbl l-gi">Gi Fundamentals</span><span class="st">8:30 AM</span></div>
+        <div class="sitem"><span class="lbl l-kids">Kids 8–14</span><span class="st">5:00 PM</span></div>
+        <div class="sitem"><span class="lbl l-nogi">No-Gi</span><span class="st">6:00 PM</span></div>
+      </div>
+      <div class="sday"><div class="sday-h">Friday</div>
+        <div class="sitem"><span class="lbl l-gi">Gi Fundamentals</span><span class="st">6:00 AM</span></div>
+        <div class="sitem"><span class="lbl l-gi">Gi</span><span class="st">6:00 PM</span></div>
+      </div>
+      <div class="sday"><div class="sday-h">Saturday</div>
+        <div class="sitem"><span class="lbl l-open">Open Mat</span><span class="st">10:30 AM – 12:30 PM</span></div>
+      </div>
+      <div class="sday"><div class="sday-h">Sunday</div>
+        <div class="sitem"><span class="lbl l-gi">Gi</span><span class="st">12:00 PM</span></div>
+      </div>
     </div>
     <p class="sched-note">Clean gis and good hygiene required. Loaner gis available for your first visit — arrive a few minutes early to sign a waiver.</p>
   </div>
