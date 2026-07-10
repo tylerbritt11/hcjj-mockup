@@ -197,11 +197,14 @@
   footer img{width:52px;height:52px;border-radius:50%;margin:0 auto 14px;border:1px solid var(--rule)}
   footer .tag{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink);margin-bottom:10px}
 
-  .mob-cta{display:none}
+  .mob-nav{display:none}
   @media(max-width:640px){
-    .mob-cta{display:block;position:fixed;bottom:14px;left:14px;right:14px;z-index:60}
-    .mob-cta .btn{display:block;box-shadow:0 8px 28px rgba(21,39,64,.35)}
-    footer{padding-bottom:110px}
+    .week-card{display:none}
+    .mob-nav{display:grid;grid-template-columns:1fr 1fr 1.35fr;gap:8px;position:fixed;top:auto;bottom:0;left:0;right:0;z-index:60;background:rgba(253,252,249,.96);backdrop-filter:blur(8px);border-top:1px solid var(--rule);border-bottom:none;padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
+    .mob-nav a{text-align:center;font-family:var(--sans);font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;text-decoration:none;padding:12px 4px;border-radius:2px;white-space:nowrap}
+    .mob-nav .mn-link{color:var(--ink);border:1px solid var(--rule);background:var(--plaster)}
+    .mob-nav .mn-cta{background:var(--ink);color:var(--paper)}
+    footer{padding-bottom:120px}
   }
 </style>
 
@@ -505,7 +508,11 @@
   </div>
 </footer>
 
-<div class="mob-cta"><a class="btn btn-navy" href="#free-class">Try a Free Class</a></div>
+<nav class="mob-nav" aria-label="Quick navigation">
+  <a class="mn-link" href="#schedule">Schedule</a>
+  <a class="mn-link" href="#pricing">Pricing</a>
+  <a class="mn-cta" href="#free-class">Free Class</a>
+</nav>
 
 </body>
 </html>
